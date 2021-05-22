@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuiz } from "../../Context/quizContext";
 
 export default function Timer({ curQuestion }: any) {
-  const [timer, setTimer] = useState<number>(12);
+  const [timer, setTimer] = useState<number>(15);
   const { quizDispatch } = useQuiz();
 
   //   console.log("=======CUR QUESTION", curQuestion);
@@ -18,14 +18,14 @@ export default function Timer({ curQuestion }: any) {
   }, []);
 
   useEffect(() => {
-    setTimer(12);
+    setTimer(15);
     console.log("Timer REseett");
   }, [curQuestion._id]);
 
   useEffect(() => {
     if (timer === 0) {
       quizDispatch({ type: "NEXT_QUESTION" });
-      setTimer(12);
+      setTimer(15);
     }
   }, [quizDispatch, timer]);
 
