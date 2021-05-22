@@ -15,6 +15,11 @@ export default function Timer({ curQuestion }: any) {
     return () => {
       clearInterval(myInterval);
     };
+  }, []);
+
+  useEffect(() => {
+    setTimer(12);
+    console.log("Timer REseett");
   }, [curQuestion._id]);
 
   useEffect(() => {
