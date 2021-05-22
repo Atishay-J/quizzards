@@ -13,8 +13,11 @@ export default function Login() {
     <div className="loginContainer">
       <h1>I am Login</h1>
       <p>{authState ? "asdfsf" : "asfaf"}</p>
-      <button onClick={() => authDispatch({ type: "LOGIN" })}>LogIN</button>
-      <button onClick={() => authDispatch({ type: "LOGOUT" })}>LogOut</button>
+      {authState.isUserLoggedIn ? (
+        <button onClick={() => authDispatch({ type: "LOGOUT" })}>LogOut</button>
+      ) : (
+        <button onClick={() => authDispatch({ type: "LOGIN" })}>LogIN</button>
+      )}
     </div>
   );
 }

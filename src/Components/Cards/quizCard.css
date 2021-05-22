@@ -1,0 +1,21 @@
+.quizCardContainer {
+  background: rgb(197, 194, 194);
+  width: 30rem;
+  margin: auto;
+}
+.quizOptionsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.quizOptionButton {
+  height: 2.5rem;
+  width: 80%;
+  text-align: center;
+  background: rgb(170, 211, 248);
+  border: none;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+}

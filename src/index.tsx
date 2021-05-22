@@ -6,14 +6,17 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 import { QuizDataProvider } from "./Context/quizDataContext";
 import { AuthProvider } from "./Context/authContext";
+import { QuizProvider } from "./Context/quizContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthProvider>
       <QuizDataProvider>
-        <Router>
-          <App />
-        </Router>
+        <QuizProvider>
+          <Router>
+            <App />
+          </Router>
+        </QuizProvider>
       </QuizDataProvider>
     </AuthProvider>
   </React.StrictMode>,

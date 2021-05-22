@@ -1,27 +1,6 @@
 import { useQuizData } from "../Context/quizDataContext";
 import QuizCard from "./Cards/QuizCategoryCard";
-
-type QUESTION_OPTIONS = {
-  _id: string;
-  value: string;
-  isCorrect: boolean;
-};
-
-type QUESTIONS = {
-  _id: string;
-  question: string;
-  points: number;
-  options: QUESTION_OPTIONS[];
-};
-
-type QUIZDATA = [
-  {
-    _id: string;
-    quizTitle: string;
-    quizThumbnail: string;
-    questions: QUESTIONS[];
-  }
-];
+import { QUIZDATA } from "../Components/Types/quiz.type";
 
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
@@ -35,8 +14,10 @@ export default function QuizCategories() {
         {quizData?.map((quiz) => (
           <QuizCard
             key={quiz._id}
+            _id={quiz._id}
             title={quiz.quizTitle}
             thumbnail={quiz.quizThumbnail}
+            question={quiz.questions}
           />
         ))}
       </div>

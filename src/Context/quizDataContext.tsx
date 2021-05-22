@@ -1,34 +1,9 @@
 import { createContext, useContext } from "react";
 import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
+import { QUIZDATA, SERVERERROR } from "../Components/Types/quiz.type";
 
 export const QuizDataContext = createContext<any | null>(null);
-
-type QUESTION_OPTIONS = {
-  _id: string;
-  value: string;
-  isCorrect: boolean;
-};
-
-type QUESTIONS = {
-  _id: string;
-  question: string;
-  points: number;
-  options: QUESTION_OPTIONS[];
-};
-
-type QUIZDATA = [
-  {
-    _id: string;
-    quizTitle: string;
-    quizThumbnail: string;
-    questions: QUESTIONS[];
-  }
-];
-
-type SERVERERROR = {
-  errorMessage: string;
-};
 
 const getQuizData = async () => {
   try {
