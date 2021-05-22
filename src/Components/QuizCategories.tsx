@@ -11,15 +11,19 @@ export default function QuizCategories() {
     <div className="quizContainer">
       <h1>Hello I am quiz</h1>
       <div className="quizWrapper">
-        {quizData?.map((quiz) => (
-          <QuizCard
-            key={quiz._id}
-            _id={quiz._id}
-            title={quiz.quizTitle}
-            thumbnail={quiz.quizThumbnail}
-            question={quiz.questions}
-          />
-        ))}
+        {quizData ? (
+          quizData?.map((quiz) => (
+            <QuizCard
+              key={quiz._id}
+              _id={quiz._id}
+              title={quiz.quizTitle}
+              thumbnail={quiz.quizThumbnail}
+              question={quiz.questions}
+            />
+          ))
+        ) : (
+          <h1>Loadingg....</h1>
+        )}
       </div>
     </div>
   );

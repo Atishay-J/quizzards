@@ -39,4 +39,5 @@ export type QUIZ_CARD_PROPS = {
 export type QUIZ_STATE = {
   questions: null | QUESTIONS[];
   score: number;
+  curQuestion: number;
 };

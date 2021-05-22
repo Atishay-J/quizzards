@@ -19,3 +19,9 @@
   font-size: 1rem;
   font-weight: 600;
 }
+.correctOption {
+  background: rgb(66, 211, 114);
+}
+.incorrectOption {
+  background: rgb(212, 60, 60);
+}

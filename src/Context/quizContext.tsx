@@ -8,6 +8,7 @@ type QUIZ_STATE_DISPATCH = [quizState: QUIZ_STATE, quizDispatch: any];
 const initState = {
   questions: null,
   score: 0,
+  curQuestion: 0,
 };
 
 const quizReducer = (state: QUIZ_STATE, action: any) => {
@@ -20,6 +21,10 @@ const quizReducer = (state: QUIZ_STATE, action: any) => {
       return { ...state, score: state.score + 5 };
     case "NEGATIVE_SCORE":
       return { ...state, score: state.score < 3 ? 0 : state.score - 3 };
+    case "NEXT_QUESTION":
+      return { ...state, curQuestion: state.curQuestion + 1 };
+    case "RESET_QUIZ":
+      return { ...state, score: 0, curQuestion: 0 };
     default:
       return state;
   }

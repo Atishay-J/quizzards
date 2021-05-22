@@ -2,21 +2,13 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../Context/authContext";
 import { useQuiz } from "../../Context/quizContext";
-import { useQuizData } from "../../Context/quizDataContext";
-import { QUIZ_STATE, QUESTIONS } from "../Types/quiz.type";
 import QuizCard from "../Cards/QuizCard";
+import Timer from "../Timer/Timer";
 
 export default function Quiz() {
   const navigate = useNavigate();
   const { authState } = useAuth();
-  const value = useQuizData();
-  const { quizState } = useQuiz();
-
-  console.log("New value", authState);
-
-  console.log("QUIIZZZ STATTETETET", quizState);
-
-  console.log("Newww Daata", value);
+  const { quizState, quizDispatch } = useQuiz();
 
   useEffect(() => {
     if (authState.isUserLoggedIn !== true) {
@@ -30,15 +22,45 @@ export default function Quiz() {
     }
   }, [navigate, quizState.questions]);
 
+  let curQuestion = quizState.questions?.[quizState.curQuestion];
+
   return (
     <div className="quizContainer">
-      <h1>I am The real quiz</h1>
-      <div className="quizInfoContainer">
-        <h1>Score : {quizState.score}</h1>
-      </div>
-      {quizState.questions?.map((question: QUESTIONS) => (
-        <QuizCard question={question.question} options={question.options} />
-      ))}
+      {quizState.questions?.length > quizState.curQuestion + 1 ? (
+        <div className="quizInfoContainer">
+          <h1>Score : {quizState.score}</h1>
+          <Timer curQuestion={curQuestion} />
+        </div>
+      ) : (
+        <div className="quizFinishedContainer">
+          <h1>Quiz Finished</h1>
+          <h3>You Scored : {quizState.score}</h3>
+          <button
+            onClick={() => {
+              navigate("/categories");
+              quizDispatch({ type: "RESET_QUIZ" });
+            }}
+          >
+            Play Again
+          </button>
+        </div>
+      )}
+
+      {quizState.questions?.length > quizState.curQuestion + 1 && (
+        <QuizCard
+          question={curQuestion.question}
+          options={curQuestion.options}
+        />
+      )}
+
+      {quizState.questions?.length > quizState.curQuestion + 1 ? (
+        <button onClick={() => quizDispatch({ type: "NEXT_QUESTION" })}>
+          {" "}
+          Next Question
+        </button>
+      ) : (
+        <button>Finish</button>
+      )}
     </div>
   );
 }
