@@ -5,5 +5,7 @@ const Images = {
   cloud: require("../Assets/cloud.png").default,
   leftRock: require("../Assets/leftRock.png").default,
   rightRock: require("../Assets/rightRock.png").default,
+  leftDoor: require("../Assets/doorLeft.png").default,
+  rightDoor: require("../Assets/doorRight.png").default,
 };
 export default Images;

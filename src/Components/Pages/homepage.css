@@ -1,3 +1,8 @@
+.homepageContainer {
+  background: var(--bgColor);
+  width: 100%;
+  overflow: hidden;
+}
 .parallaxSection {
   position: relative;
   width: 100%;
@@ -6,6 +11,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  z-index: 1;
 }
 .parallaxSection::before {
   content: "";
@@ -15,7 +21,7 @@
   width: 100%;
   /* 100px high is a gradient transition */
   height: 100px;
-  background: linear-gradient(to top, #09ac3a, transparent);
+  background: linear-gradient(to top, var(--bgColor), transparent);
   z-index: 2;
 }
 
@@ -29,4 +35,110 @@
   /* object-position: center top; */
   pointer-events: none;
   z-index: -1;
+}
+.quizDoorWrapper {
+  margin-top: 5rem;
+}
+.homeText {
+  color: var(--fontCol2);
+  text-align: center;
+  font-weight: 800;
+}
+.homeText2 {
+  color: var(--fontCol2);
+  text-align: center;
+  font-weight: 800;
+}
+.doorContainer {
+  margin-top: 6rem;
+  position: relative;
+}
+.homepageInputWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 10rem;
+}
+.homeInputContainer {
+  display: flex;
+  margin-top: 2rem;
+}
+.homepageInput {
+  height: 2rem;
+  width: 15rem;
+  padding-left: 0.5rem;
+}
+.homepageBtn {
+  width: 4rem;
+  background: rgba(0, 0, 0, 0.719);
+  border: none;
+  color: var(--fontCol2);
+  outline: none;
+}
+.spellHint {
+  display: flex;
+  margin-top: 1rem;
+  color: var(--fontCol2);
+  font-size: 0.95rem;
+  align-self: flex-start;
+  margin-left: 20%;
+  background: rgba(0, 0, 0, 0.452);
+  padding: 0.4rem 0.8rem 0.4rem 0.8rem;
+}
+.inputHintPara {
+  cursor: pointer;
+  text-decoration: underline yellowgreen;
+}
+.inputHint {
+  margin-left: 1rem;
+}
+.gotoCategoryBtn {
+  width: 6rem;
+  height: 3rem;
+  border: 1px solid rgb(8, 206, 8);
+  background: #0a0a0a;
+  color: var(--fontCol);
+}
+.gotoCategoryBtn:hover {
+  border: 1px solid rgb(4, 143, 4);
+}
+.doorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.homepageDoor {
+  width: 25%;
+  object-fit: cover;
+}
+.openLeftDoor {
+  display: block;
+  animation: openLeftDoor 0.8s ease;
+  animation-fill-mode: forwards;
+  filter: drop-shadow(5px 5px 10px #181818);
+}
+@keyframes openLeftDoor {
+  from {
+    margin-right: 0;
+  }
+  to {
+    margin-right: 10%;
+  }
+}
+.openRightDoor {
+  display: block;
+  animation: openRightDoor 0.8s ease;
+  animation-fill-mode: forwards;
+
+  filter: drop-shadow(-5px 5px 10px #181818);
+}
+@keyframes openRightDoor {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 10%;
+  }
 }

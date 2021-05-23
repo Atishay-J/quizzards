@@ -1,9 +1,15 @@
 import "./homepage.css";
 import Images from "../../Assets/Images";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Homepage() {
   const [scrollValue, setScrollValue] = useState(0);
+  const [spellInput, setSpellInput] = useState("");
+  const [openDoors, setOpenDoors] = useState(false);
+  const [showHint, setShowHint] = useState(false);
+
+  let navigate = useNavigate();
 
   const trackScroll = () => {
     setScrollValue(window.scrollY);
@@ -14,6 +20,10 @@ export default function Homepage() {
   useEffect(() => {
     window.addEventListener("scroll", trackScroll);
   }, []);
+
+  const checkSpell = () => {
+    spellInput.toLowerCase() === "alohomora" && setOpenDoors(true);
+  };
 
   return (
     <div className="homepageContainer">
@@ -31,9 +41,9 @@ export default function Homepage() {
         <img
           className="parallaxImage"
           style={{
-            width: `${100 - scrollValue * 0.2 + "%"}`,
+            width: `${90 - scrollValue * 0.1 + "%"}`,
             minWidth: "70%",
-            left: `${0 + scrollValue * 0.1 + "%"}`,
+            // left: `${0 + scrollValue * 0.1 + "%"}`,
           }}
           src={Images.school}
           alt="school"
@@ -66,32 +76,56 @@ export default function Homepage() {
           alt="ocean"
         />
       </section>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
-      praesentium reiciendis ab necessitatibus quis similique fuga quae est
-      blanditiis velit, omnis eligendi eum facere rem dolorem modi soluta.
-      Aliquam, sit? Magni iste dignissimos ab nostrum nobis tempore sint neque
-      deleniti nisi amet repellendus id porro ad, doloribus nihil fuga unde
-      numquam temporibus. Totam, eligendi officia. Eveniet exercitationem harum
-      cumque iusto. At, ex, molestiae nam itaque obcaecati accusamus possimus
-      consectetur voluptate, necessitatibus quas eius odio ut voluptatem. Fugit
-      provident cupiditate illum, possimus maxime dolorem! Blanditiis recusandae
-      dolorem sit eligendi tenetur accusantium? Id excepturi illum
-      necessitatibus provident mollitia a ipsam iusto, quas iste temporibus,
-      velit assumenda, fugit pariatur culpa! Possimus obcaecati mollitia
-      blanditiis consectetur libero, cupiditate architecto, itaque quaerat
-      aspernatur provident neque. Sunt facere officiis nam delectus dolores,
-      eaque quisquam necessitatibus minima maiores ratione numquam quidem ipsam
-      sint laborum molestiae doloribus placeat! Nobis sit placeat officia
-      quaerat tempora saepe porro error aspernatur. At eum perspiciatis est,
-      animi blanditiis voluptatem quisquam, consequatur consequuntur consectetur
-      laboriosam cum esse saepe corrupti ipsum unde itaque sint velit hic
-      delectus ex nostrum earum! Consequatur dolores sed repellat. Quas unde
-      nesciunt possimus quam cumque ex deleniti, quae non dolore. Quam commodi
-      ex aut, quaerat veritatis mollitia distinctio molestiae doloribus animi
-      minima excepturi odio quos dolores nesciunt, optio tenetur. Quam iure
-      nobis cumque molestiae labore reiciendis atque sint adipisci animi.
-      Perferendis nulla, ullam ut dolorem eos voluptatem tenetur similique
-      tempora, minima porro modi quam corrupti unde nihil soluta doloremque.
+      <div className="quizDoorWrapper">
+        <h1 className="homeText">No Muggles Beyond this point</h1>
+
+        <div className="doorContainer">
+          <img
+            className={`homepageDoor ${openDoors && "openLeftDoor"}`}
+            src={Images.leftDoor}
+            alt="leftDoor"
+          />
+          {openDoors && (
+            <button
+              className="gotoCategoryBtn"
+              onClick={() => navigate("/categories")}
+            >
+              Go to Quiz
+            </button>
+          )}
+          <img
+            className={`homepageDoor ${openDoors && "openRightDoor"}`}
+            src={Images.rightDoor}
+            alt="rightDoor"
+          />
+
+          {openDoors !== true && (
+            <div className="homepageInputWrapper">
+              <h2 className="homeText2">
+                Cast Door Opening Spell, to go to quiz
+              </h2>
+              <div className="homeInputContainer">
+                <input
+                  type="text"
+                  value={spellInput}
+                  className="homepageInput"
+                  placeholder="Cast Door Opening Spell"
+                  onChange={(e) => setSpellInput(e.target.value)}
+                />
+                <button className="homepageBtn" onClick={checkSpell}>
+                  Cast
+                </button>
+              </div>
+              <div className="spellHint">
+                <p className="inputHintPara" onClick={() => setShowHint(true)}>
+                  Hint:
+                </p>{" "}
+                {showHint && <span className="inputHint">Alohomora</span>}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
