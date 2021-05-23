@@ -4,6 +4,7 @@ import { useAuth } from "../../Context/authContext";
 import { useQuiz } from "../../Context/quizContext";
 import QuizCard from "../Cards/QuizCard";
 import Timer from "../Timer/Timer";
+import QuizFinish from "../Pages/QuizFinish";
 
 export default function Quiz() {
   const navigate = useNavigate();
@@ -34,22 +35,12 @@ export default function Quiz() {
           <Timer curQuestion={curQuestion} />
         </div>
       ) : (
-        <div className="quizFinishedContainer">
-          <h1>Quiz Finished</h1>
-          <h3>You Scored : {quizState.score}</h3>
-          <button
-            onClick={() => {
-              navigate("/categories");
-              quizDispatch({ type: "RESET_QUIZ" });
-            }}
-          >
-            Play Again
-          </button>
-        </div>
+        <QuizFinish score={quizState.score} />
       )}
 
       {quizState.questions?.length >= quizState.curQuestion + 1 && (
         <QuizCard
+          questionId={curQuestion._id}
           question={curQuestion.question}
           options={curQuestion.options}
         />

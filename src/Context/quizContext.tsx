@@ -32,9 +32,11 @@ const quizReducer = (state: any, action: any) => {
         userQuizData: [
           ...state.userQuizData,
           {
+            questionId: action.payload.questionId,
             question: action.payload.curQuestion,
             selectedOption: action.payload.selectedOption,
             isCorrect: action.payload.isCorrect,
+            answerId: action.payload.answerId,
           },
         ],
       };

@@ -2,8 +2,8 @@ import React from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import QuizCategories from "./Components/QuizCategories";
-import Login from "./Components/Login";
+import QuizCategories from "./Components/Pages/QuizCategories";
+import Login from "./Components/Pages/Login";
 import Quiz from "./Components/Quiz/Quiz";
 
 function App() {

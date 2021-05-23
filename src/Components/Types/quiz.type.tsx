@@ -32,14 +32,15 @@ export type QUIZ_PROPS = {
 };
 
 export type QUIZ_CARD_PROPS = {
+  questionId: string;
   question: string;
   options: QUESTION_OPTIONS[];
 };
 
 export type USER_QUIZ_DATA = {
-  // _id: string;
+  questionId: string;
   question: string;
-  answer: string;
+  selectedOption: string;
   isCorrect: boolean;
   answerId: string;
 };

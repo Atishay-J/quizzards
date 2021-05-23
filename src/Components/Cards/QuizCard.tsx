@@ -4,12 +4,17 @@ import { QUIZ_CARD_PROPS, QUESTION_OPTIONS } from "../Types/quiz.type";
 import _ from "lodash";
 import "./quizCard.css";
 
-export default function QuizCard({ question, options }: QUIZ_CARD_PROPS) {
+export default function QuizCard({
+  questionId,
+  question,
+  options,
+}: QUIZ_CARD_PROPS) {
   const { quizDispatch } = useQuiz();
   const [isOptionSelected, setIsOptionSelected] = useState(false);
   const [shuffledOptions, setShuffledOptions] = useState<any>(null);
 
   const handleResponse = (
+    questionId: string,
     isCorrect: boolean,
     curQuestion: string,
     selectedOption: string,
@@ -19,7 +24,7 @@ export default function QuizCard({ question, options }: QUIZ_CARD_PROPS) {
 
     quizDispatch({
       type: "SET_USER_QUIZ_DATA",
-      payload: { curQuestion, selectedOption, isCorrect, answerId },
+      payload: { questionId, curQuestion, selectedOption, isCorrect, answerId },
     });
 
     if (isOptionSelected !== true) {
@@ -50,6 +55,7 @@ export default function QuizCard({ question, options }: QUIZ_CARD_PROPS) {
             }`}
             onClick={() =>
               handleResponse(
+                questionId,
                 option.isCorrect,
                 question,
                 option.value,

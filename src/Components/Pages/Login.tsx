@@ -1,4 +1,4 @@
-import { useAuth } from "../Context/authContext";
+import { useAuth } from "../../Context/authContext";
 
 type AUTH = {
   authState: any;

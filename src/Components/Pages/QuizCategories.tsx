@@ -1,8 +1,8 @@
-import { useQuizData } from "../Context/quizDataContext";
-import QuizCard from "./Cards/QuizCategoryCard";
-import { QUIZDATA } from "../Components/Types/quiz.type";
+import { useQuizData } from "../../Context/quizDataContext";
+import QuizCard from "../Cards/QuizCategoryCard";
+import { QUIZDATA } from "../Types/quiz.type";
 import { useEffect } from "react";
-import { useQuiz } from "../Context/quizContext";
+import { useQuiz } from "../../Context/quizContext";
 
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
