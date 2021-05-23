@@ -8,6 +8,7 @@ export default function Homepage() {
   const [spellInput, setSpellInput] = useState("");
   const [openDoors, setOpenDoors] = useState(false);
   const [showHint, setShowHint] = useState(false);
+  const [showMsg, setShowMsg] = useState(false);
 
   let navigate = useNavigate();
 
@@ -20,7 +21,9 @@ export default function Homepage() {
   }, []);
 
   const checkSpell = () => {
-    spellInput.toLowerCase() === "alohomora" && setOpenDoors(true);
+    spellInput.toLowerCase() === "alohomora"
+      ? setOpenDoors(true)
+      : setShowMsg(true);
   };
 
   return (
@@ -100,8 +103,16 @@ export default function Homepage() {
           {openDoors !== true && (
             <div className="homepageInputWrapper">
               <h2 className="homeText2">
-                Cast Door Opening Spell, to go to quiz
+                Cast Lock Opening Spell, to go to quiz
               </h2>
+              {showMsg && (
+                <p className="warningText">
+                  You are not a Wizard!{" "}
+                  <span className="warningPara">
+                    Only a Wizard can cast this spell
+                  </span>
+                </p>
+              )}
               <div className="homeInputContainer">
                 <input
                   type="text"

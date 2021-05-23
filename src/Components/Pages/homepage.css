@@ -44,6 +44,23 @@
   text-align: center;
   font-weight: 800;
 }
+.warningText {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--fontCol2);
+  margin-top: 1rem;
+  background: rgba(0, 0, 0, 0.705);
+  padding: 1rem 2rem 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.warningPara {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
 .homeText2 {
   color: var(--fontCol2);
   text-align: center;
