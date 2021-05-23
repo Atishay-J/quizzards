@@ -1,0 +1,31 @@
+.quizContainer {
+  padding-bottom: 2rem;
+  display: flex;
+}
+.quizInfoContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(153, 205, 50, 0.945);
+  width: 50%;
+  margin-top: 2rem;
+  padding: 0.5rem 0 0.5rem 0;
+  border-radius: 10px;
+}
+.scoreText {
+  font-size: 1.6rem;
+}
+.timerText {
+  font-size: 1.6rem;
+}
+.nextQuesBtn {
+  width: 8rem;
+  height: 2rem;
+  background: var(--bgColor);
+  border: 1px solid var(--secondryCol);
+  color: var(--fontCol2);
+  align-self: flex-end;
+  margin-right: 25%;
+  margin-top: -3rem;
+  border-radius: 30px;
+}

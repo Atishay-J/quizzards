@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { useQuiz } from "../../Context/quizContext";
 import { QUIZ_STATE } from "../Types/quiz.type";
 import QuizFinishCard from "../Cards/QuizFinishCard";
+import "./quizFinish.css";
 
 type QUIZ_FINISH_PROPS = {
   score: number;
@@ -14,8 +15,8 @@ export default function QuizFinish({ score }: QUIZ_FINISH_PROPS) {
 
   return (
     <div className="quizFinishContainer">
-      <h1>Quiz Finished</h1>
-      <h3>You Scored : {score}</h3>
+      <h1 className="quizFinishedHead">Quiz Finished</h1>
+      <h3 className="userScoreText">You Scored : {score}</h3>
 
       <div className="quizReviewContainer">
         {quizState.userQuizData.map((data) => {
@@ -35,14 +36,16 @@ export default function QuizFinish({ score }: QUIZ_FINISH_PROPS) {
           );
         })}
       </div>
-
-      <button
-        onClick={() => {
-          navigate("/categories");
-        }}
-      >
-        Play Again
-      </button>
+      <div className="playAgainContainer">
+        <button
+          className="playAgainBtn"
+          onClick={() => {
+            navigate("/categories");
+          }}
+        >
+          Play Again
+        </button>
+      </div>
     </div>
   );
 }

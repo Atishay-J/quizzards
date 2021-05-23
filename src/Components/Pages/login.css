@@ -1,0 +1,23 @@
+.loginContainer {
+  background: var(--bgColor);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fontCol2);
+}
+.loginPara {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.loginBtn {
+  width: 7rem;
+  height: 2.3rem;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: var(--bgColor);
+  border: 1px solid var(--secondryCol);
+  color: var(--fontCol2);
+}

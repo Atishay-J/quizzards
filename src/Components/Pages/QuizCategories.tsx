@@ -3,6 +3,7 @@ import QuizCard from "../Cards/QuizCategoryCard";
 import { QUIZDATA } from "../Types/quiz.type";
 import { useEffect } from "react";
 import { useQuiz } from "../../Context/quizContext";
+import "./quizPage.css";
 
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
@@ -15,7 +16,7 @@ export default function QuizCategories() {
 
   return (
     <div className="quizContainer">
-      <h1>Hello I am quiz</h1>
+      <h1 className="quizCategoryHeading">Select Your Journey</h1>
       <div className="quizWrapper">
         {quizData ? (
           quizData?.map((quiz) => (

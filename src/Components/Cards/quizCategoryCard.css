@@ -1,14 +1,25 @@
 .quizCategoryContainer {
-  width: 10rem;
-
-  background: #222222;
+  width: 15rem;
+  height: 20rem;
   margin-top: 2rem;
+  box-shadow: var(--boxShadow1);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.28s ease-in-out;
+}
+.quizCategoryContainer:hover {
+  transform: scale(1.03);
 }
 .quizCategoryThumbnail {
   width: 100%;
-  height: 9rem;
+  height: 17rem;
   object-fit: cover;
+  border-radius: 10px 10px 0 0;
 }
 .quizCategoryTitle {
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 0.5rem;
+  padding: 0 1rem 1rem 1rem;
 }

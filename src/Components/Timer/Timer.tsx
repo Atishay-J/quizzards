@@ -29,5 +29,5 @@ export default function Timer({ curQuestion }: any) {
     }
   }, [quizDispatch, timer]);
 
-  return <h1>Timer: {timer}</h1>;
+  return <h1 className="timerText">Timer: {timer}</h1>;
 }
