@@ -49,7 +49,7 @@ export default function Homepage() {
         <img
           className="parallaxImage"
           style={{
-            top: `${33 - scrollValue * 0.1 + "%"}`,
+            top: `${50 - scrollValue * 0.1 + "%"}`,
             left: "0%",
 
             objectPosition: "0px -32rem ",
@@ -60,7 +60,7 @@ export default function Homepage() {
         <img
           className="parallaxImage"
           style={{
-            top: `${0 - scrollValue * 0.1 + "%"}`,
+            top: `${25 - scrollValue * 0.1 + "%"}`,
           }}
           src={Images.rightRock}
           alt="Right Rock"
@@ -68,7 +68,7 @@ export default function Homepage() {
         <img
           className="parallaxImage"
           style={{
-            top: `${30 - scrollValue * 0.1 + "%"}`,
+            top: `${52 - scrollValue * 0.1 + "%"}`,
           }}
           src={Images.ocean}
           alt="ocean"
