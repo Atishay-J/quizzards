@@ -1,11 +1,17 @@
 import { useQuizData } from "../Context/quizDataContext";
 import QuizCard from "./Cards/QuizCategoryCard";
 import { QUIZDATA } from "../Components/Types/quiz.type";
+import { useEffect } from "react";
+import { useQuiz } from "../Context/quizContext";
 
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
-
+  const { quizDispatch } = useQuiz();
   console.log("QUUUUIIIXXXX", quizData);
+
+  useEffect(() => {
+    quizDispatch({ type: "RESET_QUIZ" });
+  }, []);
 
   return (
     <div className="quizContainer">

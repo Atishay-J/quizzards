@@ -36,8 +36,17 @@ export type QUIZ_CARD_PROPS = {
   options: QUESTION_OPTIONS[];
 };
 
+export type USER_QUIZ_DATA = {
+  // _id: string;
+  question: string;
+  answer: string;
+  isCorrect: boolean;
+  answerId: string;
+};
+
 export type QUIZ_STATE = {
   questions: null | QUESTIONS[];
   score: number;
   curQuestion: number;
+  userQuizData: USER_QUIZ_DATA[];
 };
