@@ -1,3 +1,5 @@
+import "./quizFinishCard.css";
+
 type QUIZ_FINISH_CARD_PROPS = {
   question: string;
   selectedOption: string;
@@ -21,9 +23,13 @@ export default function QuizFinishCard({
   );
   return (
     <div className="quizFinishCard">
-      <h1>{question}</h1>
-      <h2>You Selected {selectedOption}</h2>
-      <h2>Correct Option {correctOption}</h2>
+      <h1 className="reviewQue">{question}</h1>
+      <h2 className="reviewOption">
+        You Selected: <span className="reviewText"> {selectedOption}</span>
+      </h2>
+      <h2 className="reviewOption">
+        Correct Option: <span className="reviewText">{correctOption} </span>
+      </h2>
     </div>
   );
 }
