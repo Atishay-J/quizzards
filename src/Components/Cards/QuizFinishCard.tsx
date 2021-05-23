@@ -11,16 +11,6 @@ export default function QuizFinishCard({
   selectedOption,
   correctOption,
 }: QUIZ_FINISH_CARD_PROPS) {
-  console.log(
-    "============================\n ============================\n",
-    "\nQuestion",
-    question,
-    "\nSelectedOption",
-    selectedOption,
-    "\nCorrect Option",
-    correctOption,
-    "============================\n ============================\n"
-  );
   return (
     <div className="quizFinishCard">
       <h1 className="reviewQue">{question}</h1>

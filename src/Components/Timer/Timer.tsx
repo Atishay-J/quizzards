@@ -5,10 +5,7 @@ export default function Timer({ curQuestion }: any) {
   const [timer, setTimer] = useState<number>(15);
   const { quizDispatch } = useQuiz();
 
-  //   console.log("=======CUR QUESTION", curQuestion);
-
   useEffect(() => {
-    console.log("Timer is running");
     let myInterval = setInterval(() => {
       setTimer((time) => time - 1);
     }, 1000);
@@ -19,7 +16,6 @@ export default function Timer({ curQuestion }: any) {
 
   useEffect(() => {
     setTimer(15);
-    console.log("Timer REseett");
   }, [curQuestion._id]);
 
   useEffect(() => {

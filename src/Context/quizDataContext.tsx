@@ -37,8 +37,6 @@ export const QuizDataProvider = ({ children }: any) => {
     })();
   }, []);
 
-  console.log("STate", quizData);
-
   return (
     <QuizDataContext.Provider value={quizData}>
       {children}

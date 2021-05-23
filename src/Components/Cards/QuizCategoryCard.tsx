@@ -8,8 +8,6 @@ export default function QuizCard({ title, thumbnail, question }: QUIZ_PROPS) {
   const { quizState, quizDispatch } = useQuiz();
   const navigate = useNavigate();
 
-  console.log("QUEESSSSTTTTTTTTTIOOOONN", question);
-
   return (
     <div
       className="quizCategoryContainer"

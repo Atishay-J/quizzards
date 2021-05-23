@@ -12,8 +12,6 @@ export default function Quiz() {
   const { authState } = useAuth();
   const { quizState, quizDispatch } = useQuiz();
 
-  console.log("Quiz STATE", quizState);
-
   useEffect(() => {
     if (authState.isUserLoggedIn !== true) {
       navigate("/login");

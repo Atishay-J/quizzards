@@ -13,8 +13,6 @@ const initState: QUIZ_STATE = {
 };
 
 const quizReducer = (state: any, action: any) => {
-  console.log("Quiz Context payload", action.payload);
-
   switch (action.type) {
     case "ADD_QUESTIONS":
       return { ...state, questions: action.payload.question };

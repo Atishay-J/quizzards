@@ -8,7 +8,6 @@ import "./quizPage.css";
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
   const { quizDispatch } = useQuiz();
-  console.log("QUUUUIIIXXXX", quizData);
 
   useEffect(() => {
     quizDispatch({ type: "RESET_QUIZ" });

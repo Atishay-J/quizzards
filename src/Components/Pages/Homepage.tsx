@@ -15,8 +15,6 @@ export default function Homepage() {
     setScrollValue(window.scrollY);
   };
 
-  console.log("Sroll value", scrollValue);
-
   useEffect(() => {
     window.addEventListener("scroll", trackScroll);
   }, []);
