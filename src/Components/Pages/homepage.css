@@ -24,6 +24,10 @@
   background: linear-gradient(to top, var(--bgColor), transparent);
   z-index: 2;
 }
+.parallaxHead {
+  color: var(--fontCol2);
+  font-size: 3.3rem;
+}
 
 .parallaxImage {
   position: absolute;
