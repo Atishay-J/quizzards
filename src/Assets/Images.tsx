@@ -7,5 +7,6 @@ const Images = {
   rightRock: require("../Assets/rightRock.png").default,
   leftDoor: require("../Assets/doorLeft.png").default,
   rightDoor: require("../Assets/doorRight.png").default,
+  hallWay: require("../Assets/hallway.png").default,
 };
 export default Images;

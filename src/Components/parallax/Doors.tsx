@@ -19,7 +19,7 @@ export default function Doors() {
 
   return (
     <div className="quizDoorWrapper">
-      <h1 className="homeText">No Muggles Beyond this point</h1>
+      <h1 className="homeText">No Muggles Can Enter Beyond This Point</h1>
 
       <div className="doorContainer">
         <img
@@ -28,12 +28,15 @@ export default function Doors() {
           alt="leftDoor"
         />
         {openDoors && (
-          <button
-            className="gotoCategoryBtn"
-            onClick={() => navigate("/categories")}
-          >
-            Go to Quiz
-          </button>
+          <div className="gotoCategoryWrapper">
+            <h2 className="gotoCategoryHead">The Quiz awaits you</h2>
+            <button
+              className="gotoCategoryBtn"
+              onClick={() => navigate("/categories")}
+            >
+              Go to Quiz
+            </button>
+          </div>
         )}
         <img
           className={`homepageDoor ${openDoors && "openRightDoor"}`}
@@ -50,7 +53,7 @@ export default function Doors() {
               <p className="warningText">
                 You are not a Wizard!{" "}
                 <span className="warningPara">
-                  Only a Wizard can cast this spell
+                  Only a Wizard can Know this spell
                 </span>
               </p>
             )}
@@ -59,7 +62,7 @@ export default function Doors() {
                 type="text"
                 value={spellInput}
                 className="homepageInput"
-                placeholder="Cast Door Opening Spell"
+                placeholder="Cast Door Lock Opening Spell"
                 onChange={(e) => setSpellInput(e.target.value)}
               />
               <button className="homepageBtn" onClick={checkSpell}>

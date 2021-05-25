@@ -2,6 +2,7 @@
   background: var(--bgColor);
   width: 100%;
   overflow: hidden;
+  padding-bottom: 2rem;
 }
 .parallaxSection {
   position: relative;
@@ -40,8 +41,9 @@
   pointer-events: none;
   z-index: -1;
 }
+
 .quizDoorWrapper {
-  margin-top: 5rem;
+  margin-top: 10rem;
 }
 .homeText {
   color: var(--fontCol2);
@@ -70,8 +72,10 @@
   text-align: center;
   font-weight: 800;
 }
+
 .doorContainer {
-  margin-top: 6rem;
+  width: 70%;
+  margin-top: 9rem;
   position: relative;
 }
 .homepageInputWrapper {
@@ -114,12 +118,26 @@
 .inputHint {
   margin-left: 1rem;
 }
+.gotoCategoryWrapper {
+  /* background: rgb(64, 182, 9); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.gotoCategoryHead {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--fontCol2);
+  margin-top: -3rem;
+}
 .gotoCategoryBtn {
   width: 6rem;
   height: 3rem;
   border: 1px solid rgb(8, 206, 8);
   background: #0a0a0a;
   color: var(--fontCol);
+  margin-top: 2rem;
 }
 .gotoCategoryBtn:hover {
   border: 1px solid rgb(4, 143, 4);
@@ -145,7 +163,7 @@
     margin-right: 0;
   }
   to {
-    margin-right: 10%;
+    margin-right: 7%;
   }
 }
 .openRightDoor {
@@ -160,6 +178,6 @@
     margin-left: 0;
   }
   to {
-    margin-left: 10%;
+    margin-left: 7%;
   }
 }
