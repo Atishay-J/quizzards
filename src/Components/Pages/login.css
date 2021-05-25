@@ -11,9 +11,20 @@
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
+.usernameInput {
+  height: 2rem;
+  margin-top: 1rem;
+  border: none;
+  background: var(--bgColor);
+  box-shadow: 3px 3px 15px -8px rgba(64, 170, 18, 0.349);
+  border: 1px solid rgba(44, 48, 41, 0.308);
+  padding-left: 0.7rem;
+  color: var(--fontCol2);
+}
 .loginBtn {
-  width: 7rem;
-  height: 2.3rem;
+  min-width: 7rem;
+  padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+  /* height: 2.3rem; */
   margin-top: 1rem;
   font-size: 1.05rem;
   font-weight: 700;

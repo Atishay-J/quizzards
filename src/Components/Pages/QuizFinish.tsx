@@ -16,26 +16,34 @@ export default function QuizFinish({ score }: QUIZ_FINISH_PROPS) {
   return (
     <div className="quizFinishContainer">
       <h1 className="quizFinishedHead">Quiz Finished</h1>
-      <h3 className="userScoreText">You Scored : {score}</h3>
+      <h3 className="userScoreText">
+        {localStorage.getItem("userName")}, You Scored : {score}
+      </h3>
 
       <div className="quizReviewContainer">
-        <h3 className="reviewHead">Review your answers</h3>
-        {quizState.userQuizData.map((data) => {
-          let curQuestion = quizState.questions?.find(
-            (item: { _id: string }) => item._id === data.questionId
-          );
-          let correctOption = curQuestion?.options.find(
-            (option) => option.isCorrect === true
-          );
+        {quizState.userQuizData.length > 0 ? (
+          <div className="quizReviewWrapper">
+            <h3 className="reviewHead">Review your answers</h3>
+            {quizState.userQuizData.map((data) => {
+              let curQuestion = quizState.questions?.find(
+                (item: { _id: string }) => item._id === data.questionId
+              );
+              let correctOption = curQuestion?.options.find(
+                (option) => option.isCorrect === true
+              );
 
-          return (
-            <QuizFinishCard
-              question={data.question}
-              selectedOption={data.selectedOption}
-              correctOption={correctOption?.value}
-            />
-          );
-        })}
+              return (
+                <QuizFinishCard
+                  question={data.question}
+                  selectedOption={data.selectedOption}
+                  correctOption={correctOption?.value}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <h1>You skipped all questions</h1>
+        )}
       </div>
       <div className="playAgainContainer">
         <button

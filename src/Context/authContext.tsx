@@ -10,6 +10,7 @@ const authReducer = (state: any, action: any) => {
   switch (action.type) {
     case "LOGIN":
       localStorage.setItem("isUserLoggedIn", "true");
+      localStorage.setItem("userName", action.payload.userName);
       return { ...state, isUserLoggedIn: true };
 
     case "LOGOUT":

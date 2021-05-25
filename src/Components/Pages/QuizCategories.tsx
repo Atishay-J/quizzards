@@ -7,6 +7,7 @@ import "./quizPage.css";
 
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
+
   const { quizDispatch } = useQuiz();
 
   useEffect(() => {
