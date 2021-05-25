@@ -28,7 +28,7 @@ input:focus {
   outline: none;
 }
 @media only screen and (max-width: 600px) {
-  body {
+  html {
     font-size: 10px;
   }
 }

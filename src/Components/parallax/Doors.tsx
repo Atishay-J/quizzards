@@ -21,7 +21,7 @@ export default function Doors() {
     <div className="quizDoorWrapper">
       <h1 className="homeText">No Muggles Can Enter Beyond This Point</h1>
 
-      <div className="doorContainer">
+      <div className={`doorContainer ${openDoors && "showHallway"}`}>
         <img
           className={`homepageDoor ${openDoors && "openLeftDoor"}`}
           src={Images.leftDoor}
