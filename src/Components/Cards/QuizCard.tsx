@@ -22,12 +22,17 @@ export default function QuizCard({
   ) => {
     setIsOptionSelected(true);
 
-    quizDispatch({
-      type: "SET_USER_QUIZ_DATA",
-      payload: { questionId, curQuestion, selectedOption, isCorrect, answerId },
-    });
-
     if (isOptionSelected !== true) {
+      quizDispatch({
+        type: "SET_USER_QUIZ_DATA",
+        payload: {
+          questionId,
+          curQuestion,
+          selectedOption,
+          isCorrect,
+          answerId,
+        },
+      });
       if (isCorrect) {
         return quizDispatch({ type: "UPDATE_SCORE" });
       }
