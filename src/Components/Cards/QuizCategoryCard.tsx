@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { QUIZ_PROPS } from "../Types/quiz.type";
 
 export default function QuizCard({ title, thumbnail, question }: QUIZ_PROPS) {
-  const { quizState, quizDispatch } = useQuiz();
+  const { quizDispatch } = useQuiz();
   const navigate = useNavigate();
 
   return (
