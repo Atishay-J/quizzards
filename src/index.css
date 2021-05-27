@@ -15,6 +15,9 @@
   -webkit-tap-highlight-color: transparent;
   /* background: var(--bgColor); */
 }
+html {
+  font-size: 10px;
+}
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
@@ -31,8 +34,9 @@ button:focus {
 input:focus {
   outline: none;
 }
-@media only screen and (max-width: 600px) {
+
+@media only screen and (min-width: 668px) {
   html {
-    font-size: 10px;
+    font-size: 13px;
   }
 }

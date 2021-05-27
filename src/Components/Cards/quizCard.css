@@ -1,7 +1,7 @@
 .quizCardContainer {
   background: var(--bgColor);
   width: 30rem;
-  /* margin: auto; */
+  margin: auto;
   box-shadow: -9px 3px 39px -19px rgba(67, 69, 71, 0.671);
 
   border-radius: 20px;

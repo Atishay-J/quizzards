@@ -21,9 +21,9 @@ export default function QuizFinish({ score }: QUIZ_FINISH_PROPS) {
       </h3>
 
       <div className="quizReviewContainer">
-        <h3 className="reviewHead">Review your answers</h3>
         {quizState.userQuizData.length > 0 ? (
           <div className="quizReviewWrapper">
+            <h3 className="reviewHead">Review your answers</h3>
             {quizState.userQuizData.map((data) => {
               let curQuestion = quizState.questions?.find(
                 (item: { _id: string }) => item._id === data.questionId
@@ -42,7 +42,7 @@ export default function QuizFinish({ score }: QUIZ_FINISH_PROPS) {
             })}
           </div>
         ) : (
-          <h1>You skipped all questions</h1>
+          <h1 className="skippedQueHead">You skipped all questions</h1>
         )}
       </div>
       <div className="playAgainContainer">

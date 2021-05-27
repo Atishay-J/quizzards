@@ -1,6 +1,8 @@
 .quizFinishContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
   /* justify-content: center; */
   align-items: center;
   padding-bottom: 5.5rem;
@@ -11,7 +13,7 @@
 .quizReviewContainer {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: flex-start;
   justify-content: space-between;
   margin-top: 5rem;
 }
@@ -27,10 +29,15 @@
   font-weight: 700;
   /* margin-top: 3rem; */
   text-align: left;
-  margin-left: 4.5rem;
+  /* margin-left: 1.5rem; */
 }
 .quizFinishedHead {
   font-size: 1.3rem;
+}
+.skippedQueHead {
+  margin: auto;
+  font-size: 1.8rem;
+  margin-top: 2rem;
 }
 .userScoreText {
   font-size: 2rem;
@@ -55,4 +62,9 @@
   border: 1px solid var(--secondryCol);
   color: var(--fontCol2);
   font-weight: 700;
+}
+@media only screen and (min-width: 668px) {
+  .quizReviewContainer {
+    width: 60%;
+  }
 }

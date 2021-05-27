@@ -3,3 +3,9 @@
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(211, 34, 34);
+}

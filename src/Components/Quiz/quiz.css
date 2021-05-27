@@ -2,11 +2,12 @@
   padding-bottom: 2rem;
   display: flex;
   background: var(--bgColor);
+  width: 100%;
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  justify-content: space-around;
+  justify-content: center;
+  /* justify-content: space-around; */
   color: var(--fontCol2);
 }
 .quizCategoryHeading {
@@ -26,7 +27,7 @@
 }
 .quizWrapper {
   /* border: 1px solid green; */
-  width: 80%;
+  width: 90%;
   margin-top: 2rem;
 }
 
