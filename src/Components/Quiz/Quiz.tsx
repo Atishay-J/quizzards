@@ -27,33 +27,29 @@ export default function Quiz() {
   let curQuestion = quizState.questions?.[quizState.curQuestion];
 
   return (
-    <div className="quizContainer">
+    <>
       {quizState.questions?.length >= quizState.curQuestion + 1 ? (
-        <div className="quizInfoContainer">
-          <h1 className="scoreText">Score : {quizState.score}</h1>
-          <Timer curQuestion={curQuestion} />
+        <div className="quizContainer">
+          <div className="quizInfoContainer">
+            <h1 className="scoreText">Score : {quizState.score}</h1>
+            <Timer curQuestion={curQuestion} />
+          </div>
+          <QuizCard
+            questionId={curQuestion._id}
+            question={curQuestion.question}
+            options={curQuestion.options}
+          />
+          <button
+            className="nextQuesBtn"
+            onClick={() => quizDispatch({ type: "NEXT_QUESTION" })}
+          >
+            {" "}
+            Next Question
+          </button>
         </div>
       ) : (
         <QuizFinish score={quizState.score} />
       )}
-
-      {quizState.questions?.length >= quizState.curQuestion + 1 && (
-        <QuizCard
-          questionId={curQuestion._id}
-          question={curQuestion.question}
-          options={curQuestion.options}
-        />
-      )}
-
-      {quizState.questions?.length >= quizState.curQuestion + 1 && (
-        <button
-          className="nextQuesBtn"
-          onClick={() => quizDispatch({ type: "NEXT_QUESTION" })}
-        >
-          {" "}
-          Next Question
-        </button>
-      )}
-    </div>
+    </>
   );
 }
