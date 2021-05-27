@@ -62,7 +62,7 @@ export default function Doors() {
                 type="text"
                 value={spellInput}
                 className="homepageInput"
-                placeholder="Cast Door Lock Opening Spell"
+                placeholder="Cast Spell Here"
                 onChange={(e) => setSpellInput(e.target.value)}
               />
               <button className="homepageBtn" onClick={checkSpell}>

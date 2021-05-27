@@ -1,7 +1,7 @@
 .quizFinishContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   padding-bottom: 5.5rem;
   padding-top: 4rem;

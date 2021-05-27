@@ -3,8 +3,8 @@ import QuizCard from "../Cards/QuizCategoryCard";
 import { QUIZDATA } from "../Types/quiz.type";
 import { useEffect } from "react";
 import { useQuiz } from "../../Context/quizContext";
-import "./quizPage.css";
-
+// import "./quizPage.css";
+import "../Quiz/Quiz";
 export default function QuizCategories() {
   const quizData: QUIZDATA = useQuizData();
 
