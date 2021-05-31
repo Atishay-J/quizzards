@@ -1,4 +1,3 @@
-import Images from "../../Assets/Images";
 import { useEffect, useState } from "react";
 
 export default function Parallax() {
