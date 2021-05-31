@@ -16,6 +16,7 @@
   margin-top: 1rem;
   /* background: rgba(90, 90, 243, 0.849); */
   background: #c49704;
+
   min-height: 2.5rem;
   /* width: 90%; */
   padding-left: 1rem;
@@ -26,7 +27,7 @@
 }
 
 .reviewText {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-left: 1rem;
   color: var(--fontCol2);
 }
