@@ -1,18 +1,23 @@
 .loginContainer {
   background: var(--bgColor);
   height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: var(--fontCol2);
 }
+.loginHeading {
+  font-size: 2rem;
+  font-weight: 700;
+}
 .loginPara {
   font-size: 1.2rem;
   margin-top: 0.5rem;
 }
 .usernameInput {
-  height: 3.3rem;
+  height: 2.5rem;
   margin-top: 1rem;
   border: none;
   /* background: var(--bgColor); */
