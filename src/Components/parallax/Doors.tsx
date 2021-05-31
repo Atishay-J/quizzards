@@ -24,7 +24,7 @@ export default function Doors() {
       <div className={`doorContainer ${openDoors && "showHallway"}`}>
         <img
           className={`homepageDoor ${openDoors && "openLeftDoor"}`}
-          src={Images.leftDoor}
+          src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/doorLeft_sElmoM7E6.png"
           alt="leftDoor"
         />
         {openDoors && (
@@ -40,7 +40,7 @@ export default function Doors() {
         )}
         <img
           className={`homepageDoor ${openDoors && "openRightDoor"}`}
-          src={Images.rightDoor}
+          src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/doorRight_3BtCyqOAA7.png"
           alt="rightDoor"
         />
 

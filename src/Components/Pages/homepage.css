@@ -1,13 +1,14 @@
 .homepageContainer {
   background: var(--bgColor);
   width: 100%;
+
   overflow: hidden;
-  padding-bottom: 2rem;
+  padding-bottom: 5rem;
 }
 .parallaxSection {
   position: relative;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +92,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url(../../Assets/hallway.png);
+  background-image: url(https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/hallway_ZKwlzXpfT.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
@@ -192,7 +193,7 @@
     margin-right: 0;
   }
   to {
-    margin-right: 15%;
+    margin-right: 5rem;
   }
 }
 .openRightDoor {
@@ -207,6 +208,28 @@
     margin-left: 0;
   }
   to {
-    margin-left: 15%;
+    margin-left: 5rem;
+  }
+}
+
+@media only screen and (min-width: 668px) {
+  .homeInputContainer {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .homepageInput {
+    height: 2rem;
+  }
+  .homepageBtn {
+    width: 2rem;
+    height: 2.3rem;
+    margin: initial;
+  }
+  .spellHint {
+    font-size: 1.1rem;
+    margin: initial;
+    margin-left: 3rem;
+    margin-top: 1rem;
   }
 }

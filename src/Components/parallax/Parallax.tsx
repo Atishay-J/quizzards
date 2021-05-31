@@ -14,14 +14,18 @@ export default function Parallax() {
 
   return (
     <section className="parallaxSection">
-      <img className="parallaxImage" src={Images.sky} alt="sky" />
+      <img
+        className="parallaxImage"
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/sky_6wNmxNqd1.png"
+        alt="sky"
+      />
       <img
         className="parallaxImage"
         style={{
           top: "-10%",
           left: `${20 + scrollValue * -0.2 + "%"}`,
         }}
-        src={Images.cloud}
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/cloud_13Ghaw2T_.png"
         alt="cloud"
       />
       <img
@@ -31,7 +35,7 @@ export default function Parallax() {
           minWidth: "70%",
           // left: `${0 + scrollValue * 0.1 + "%"}`,
         }}
-        src={Images.school}
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/school_sg1XCrWBL.png"
         alt="school"
       />
       <img
@@ -42,7 +46,7 @@ export default function Parallax() {
 
           objectPosition: "0px -32rem ",
         }}
-        src={Images.leftRock}
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/leftRock_xrHqvzIIg.png"
         alt="Left Rock"
       />
       <img
@@ -50,7 +54,7 @@ export default function Parallax() {
         style={{
           top: `${25 - scrollValue * 0.1 + "%"}`,
         }}
-        src={Images.rightRock}
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/rightRock_tYV1uSPhJ.png"
         alt="Right Rock"
       />
       <img
@@ -58,7 +62,7 @@ export default function Parallax() {
         style={{
           top: `${52 - scrollValue * 0.1 + "%"}`,
         }}
-        src={Images.ocean}
+        src="https://ik.imagekit.io/utk0u9ryhxe/Quiz_App/ocean_q21irrk_cc.png"
         alt="ocean"
       />
       <h1
