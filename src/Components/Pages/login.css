@@ -1,0 +1,43 @@
+.loginContainer {
+  background: var(--bgColor);
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--fontCol2);
+}
+.loginHeading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.loginPara {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+.usernameInput {
+  height: 2.5rem;
+  margin-top: 1rem;
+  border: none;
+  /* background: var(--bgColor); */
+  font-weight: 700;
+  font-size: 1.2rem;
+  background: #222222;
+  box-shadow: 3px 3px 15px -8px rgba(68, 68, 68, 0.459);
+  border: 1px solid rgba(44, 48, 41, 0.308);
+  padding-left: 0.7rem;
+  color: var(--fontCol2);
+}
+.loginBtn {
+  min-width: 7rem;
+  padding: 0.8rem 1.5rem 0.8rem 1.5rem;
+  /* height: 2.3rem; */
+
+  margin-top: 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  background: var(--bgColor);
+  border: 1px solid var(--secondryCol);
+  color: var(--fontCol2);
+}
